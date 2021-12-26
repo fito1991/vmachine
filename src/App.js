@@ -75,7 +75,6 @@ function App() {
       <div className="row">
         <div className="col s12 m4 l4 order">
           { order == '' ? <h5>No Orders</h5> : <h5>Pending Orders</h5> }
-          {/* <h4>Pending Orders</h4> */}
           <Order order={order}/>
         </div>
         { products ? <Spinner/> : allProducts }

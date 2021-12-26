@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-// import useCountDown from "react-countdown-hook";
-// import useCountdown from "@bradgarropy/use-countdown";
 
 const Product = ({data, updateOrderState}) => {
     // extract data product from prop data
     const {id, name, preparation_time, thumbnail} = data;
-
-    // countdown
-    // const [timeLeft, actions] = useCountDown(preparation_time * 1000, 100);
-
-    // const remaining = (timeLeft / 1000).toFixed(0) == 0 ? '-' : `${(timeLeft / 1000).toFixed(0)} seconds`;
-    // const timer = (timeLeft / 1000).toFixed(0) == 0 ? preparation_time : `${(timeLeft / 1000).toFixed(0)}`;
 
     // Create Orders List
     const [orders, setOrders] = useState([]);
@@ -40,8 +32,6 @@ const Product = ({data, updateOrderState}) => {
                         data-sec={preparation_time}
                     >Order</button>
                     <input type="hidden" name="currentTime" value={preparation_time} />
-                    {/* <p className='white-text'>Remaining: {remaining}
-                    </p> */}
                 </div>
             </div>
         </div>
