@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Product from './Product'
 
-const ListProduct = ({dataProduct}) => {
+const ListProduct = ({dataProduct, updateOrderState}) => {
 
     // console.log(dataProduct);
 
@@ -13,6 +13,7 @@ const ListProduct = ({dataProduct}) => {
                         <Product 
                             key = {data.id}
                             data = {data}
+                            updateOrderState = {updateOrderState}
                         />
                     ))}
                 </div>

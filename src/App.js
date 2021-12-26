@@ -4,7 +4,6 @@ import Order from './components/Order';
 import Product from './components/Product';
 import Spinner from './components/Spinner';
 
-
 function App() {
 
   // State
@@ -12,6 +11,24 @@ function App() {
   const [products, setProducts] = useState(true);
   const [error, setError] = useState(false);
   const [result, setResult] = useState([]);
+
+  // Order state
+  const [order, setOrder] = useState([]);
+
+  // group detail order
+  const [list, setLists] = useState([]);
+
+  // Update Order State
+  const updateOrderState = (e, tmr) => {
+      setOrder([
+        ...order,
+        {
+          name: e.target.value,
+          time: parseInt(tmr)
+        }
+      ]);
+  } 
+
 
 
   // consult API
@@ -49,17 +66,19 @@ function App() {
   if (error) {
     allProducts = <h4>Oops! Houston we have a problem</h4> ;
   }else{
-    allProducts = <ListProduct dataProduct={result}/> ;
+    allProducts = <ListProduct dataProduct={result} updateOrderState={updateOrderState}/> ;
   }
 
   return (
     <div className="App">
       <h2 className='center'>Vending Machine</h2>
       <div className="row">
+        <div className="col s12 m4 l4 order">
+          { order == '' ? <h5>No Orders</h5> : <h5>Pending Orders</h5> }
+          {/* <h4>Pending Orders</h4> */}
+          <Order order={order}/>
+        </div>
         { products ? <Spinner/> : allProducts }
-        {/* <div className="col s12 m4 l4">
-          <Order/>
-        </div> */}
       </div>
     </div>
   );

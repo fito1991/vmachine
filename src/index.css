@@ -12,6 +12,26 @@ code {
     monospace;
 }
 
+/* width */
+.order::-webkit-scrollbar, .list-product-container::-webkit-scrollbar{
+  width: 10px;
+}
+
+/* Track */
+.order::-webkit-scrollbar-track, .list-product-container::-webkit-scrollbar-track{
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.order::-webkit-scrollbar-thumb, .list-product-container::-webkit-scrollbar-thumb{
+  background: #888; 
+}
+
+/* Handle on hover */
+.order::-webkit-scrollbar-thumb:hover, .list-product-container::-webkit-scrollbar-thumb:hover{
+  background: #555; 
+}
+
 .list-product-container{
   height: 480px;
   overflow-y: auto;
@@ -20,4 +40,21 @@ code {
 .img-product{
   width: 100%;
   height: 180px;
+}
+
+.order{
+  height: 80vh;
+  overflow: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .img-product {
+    width: 140px;
+    height: 171px;
+    margin: 0 auto;
+    display: block;
+  }
+  .order{
+    height: 30vh;
+  }
 }

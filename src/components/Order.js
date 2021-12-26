@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {Fragment} from 'react'
+import ElementOrder from './ElementOrder';
 
 const Order = ({order}) => {
     return (
-        <div className="order">
-            <p>name: <span>{order.nameOrder}</span></p>
-        </div>
+        order.map(orderData => (
+            <ElementOrder
+                key = {Math.floor(Math.random() * 999999) + 1}
+                detail={orderData}
+            />
+        ))
     )
 }
 
